@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace UnitTest.TestData
 {
-  static public class IList
+  static public class List
   {
 
     readonly static public List<sbyte> sBytes = TestJustReadCollectionFactory.testCollection

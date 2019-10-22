@@ -22,7 +22,7 @@ namespace UnitTest.UnitTest.JustReadCollectionTest
       }
       Debug.WriteLine(testRun1++);
 
-      IList<int> testCollection = underlayingCollection == TestJustReadCollectionFactory.ARRAY ? Array.ints : (IList<int>)IList.ints;
+      IList<int> testCollection = underlayingCollection == TestJustReadCollectionFactory.ARRAY ? Array.ints : (IList<int>)List.ints;
 
       int[] testArray = TestJustReadCollectionFactory.TestData(testCollection).Array();
       Assert.IsTrue(Enumerable.SequenceEqual(testCollection, testArray));
@@ -41,7 +41,7 @@ namespace UnitTest.UnitTest.JustReadCollectionTest
 
       Debug.WriteLine(testRun2++);
 
-      IList<int> testCollection = underlayingCollection == TestJustReadCollectionFactory.ARRAY ? Array.ints : (IList<int>)IList.ints;
+      IList<int> testCollection = underlayingCollection == TestJustReadCollectionFactory.ARRAY ? Array.ints : (IList<int>)List.ints;
 
       List<int> testList = TestJustReadCollectionFactory.TestData(testCollection).List();
       Assert.IsTrue(Enumerable.SequenceEqual(testCollection, testList));

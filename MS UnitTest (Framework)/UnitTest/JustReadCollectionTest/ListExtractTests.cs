@@ -29,7 +29,7 @@ namespace UnitTest.UnitTest.JustReadCollectionTest
       }
       Debug.WriteLine(testRun++);
 
-      IList<int> testCollection = underlayingCollection == TestJustReadCollectionFactory.ARRAY ? TestData.Array.ints : (IList<int>)IList.ints;
+      IList<int> testCollection = underlayingCollection == TestJustReadCollectionFactory.ARRAY ? TestData.Array.ints : (IList<int>)List.ints;
 
       List<int> listExtract = TestJustReadCollectionFactory.TestData(testCollection).ListExtract(index, count);
       Assert.IsTrue(Enumerable.SequenceEqual(listExtract, testCollection.Skip(index).Take(count)));
