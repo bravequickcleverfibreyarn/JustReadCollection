@@ -83,8 +83,6 @@ namespace Software919.ReaOnlyCollection
       }
     }
 
-    #region protected
-
     /// <summary>
     /// Copies to T[].
     /// </summary>    
@@ -114,6 +112,8 @@ namespace Software919.ReaOnlyCollection
 
       return newArr;
     }
+
+    #region protected
 
     /// <summary>
     /// Copies to T[] from T[] items.
