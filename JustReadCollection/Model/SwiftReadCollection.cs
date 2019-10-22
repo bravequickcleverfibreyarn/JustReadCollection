@@ -22,7 +22,7 @@ namespace Software919.ReaOnlyCollection
   {
     public SwiftReadCollection(IList<T> iList) : base(iList) { }
 
-    override protected void CopyToArrayFromArray(T[] items, T[] arr, int index, int count)
+    override protected void CopyFromItems(T[] items, T[] arr, int index, int count)
     { 
 #if DEBUG
       Debug.WriteLine("To T[], from T[] (unmanaged way).");

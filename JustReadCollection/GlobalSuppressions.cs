@@ -9,4 +9,5 @@
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE0022:Use block body for methods", Justification = "<Pending>", Scope = "member", Target = "~M:JustReadCollection.Model.JustReadCollection`1.List~System.Collections.Generic.List{`0}")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE0022:Use block body for methods", Justification = "<Pending>", Scope = "member", Target = "~M:Software919.ReaOnlyCollection.IListExtensions.AsJustReadCollection``1(System.Collections.Generic.IList{``0})~Software919.ReaOnlyCollection.JustReadCollection{``0}")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE0022:Use block body for methods", Justification = "<Pending>", Scope = "member", Target = "~M:Software919.ReaOnlyCollection.JustReadCollection`1.List~System.Collections.Generic.List{`0}")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE0022:Use block body for methods", Justification = "<Pending>", Scope = "member", Target = "~M:Software919.ReaOnlyCollection.JustReadCollection`1.Array~`0[]")]
 

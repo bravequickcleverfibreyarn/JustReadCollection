@@ -15,6 +15,10 @@ namespace Software919.ReaOnlyCollection
   /// </summary>  
   public class JustReadCollection<T> : ReadOnlyCollection<T>
   {
+    const string
+      toArrayfromArray = "To T[], from T[].",
+      toArrayfromNonArray = "To T[], from non-array Items.";
+
     public JustReadCollection(IList<T> iList) : base(iList) { }
 
     #region Extract
@@ -59,10 +63,7 @@ namespace Software919.ReaOnlyCollection
     /// <summary>
     /// Collection in new T[].
     /// </summary>        
-    public T[] Array()
-    {
-      return CopyFromItems(0, Items.Count);
-    }
+    public T[] Array() => CopyFromItems(0, Items.Count);
 
     /// <summary>
     /// Collection in new <see cref="List{T}"/>.
@@ -85,13 +86,43 @@ namespace Software919.ReaOnlyCollection
     #region protected
 
     /// <summary>
+    /// Copies to T[].
+    /// </summary>    
+    T[] CopyFromItems(int start, int count)
+    {
+      var newArr = new T[count];
+
+#if DEBUG
+      var rollPrefix = "Choice: ";
+#endif
+
+      if (Items is T[] items)
+      {
+#if DEBUG
+
+        Debug.WriteLine($"{rollPrefix}: {toArrayfromArray}");
+#endif
+        CopyFromItems(items, newArr, start, count);
+      }
+      else
+      {
+#if DEBUG
+        Debug.WriteLine($"{rollPrefix}: {toArrayfromNonArray}");
+#endif
+        CopyFromItems(newArr, start, count);
+      }
+
+      return newArr;
+    }
+
+    /// <summary>
     /// Copies to T[] from T[] items.
     /// </summary> 
-    virtual protected void CopyToArrayFromArray(T[] items, T[] arr, int index, int count)
+    virtual protected void CopyFromItems(T[] items, T[] arr, int index, int count)
     {
 
 #if DEBUG
-      Debug.WriteLine($"{nameof(CopyToArrayFromArray)}: To T[], from T[].");
+      Debug.WriteLine(toArrayfromArray);
 #endif
 
       System.Array.Copy(items, index, arr, 0, count);
@@ -100,10 +131,10 @@ namespace Software919.ReaOnlyCollection
     /// <summary>
     /// Copies to T[] from non-array Items.
     /// </summary>    
-    virtual protected void CopyToArray(T[] arr, int start, int count)
+    virtual protected void CopyFromItems(T[] arr, int start, int count)
     {
 #if DEBUG
-      Debug.WriteLine($"{nameof(CopyToArray)}: To T[], from non-array Items.");
+      Debug.WriteLine(toArrayfromNonArray);
 #endif
       if (count == Items.Count)
       {
@@ -125,36 +156,6 @@ namespace Software919.ReaOnlyCollection
 #pragma warning restore CA1062 // Validate arguments of public methods
         }
       }
-    }
-
-    /// <summary>
-    /// Copies to T[].
-    /// </summary>    
-    virtual protected T[] CopyFromItems(int start, int count)
-    {
-      var newArr = new T[count];
-
-#if DEBUG
-      var nameOfActualMethod = nameof(CopyFromItems);
-#endif
-
-      if (Items is T[] items)
-      {
-#if DEBUG
-
-        Debug.WriteLine($"{nameOfActualMethod}: To T[], from T[].");
-#endif
-        CopyToArrayFromArray(items, newArr, start, count);
-      }
-      else
-      {
-#if DEBUG
-        Debug.WriteLine($"{nameOfActualMethod}: To [], from non-array Items.");
-#endif
-        CopyToArray(newArr, start, count);
-      }
-
-      return newArr;
     }
 
     #endregion

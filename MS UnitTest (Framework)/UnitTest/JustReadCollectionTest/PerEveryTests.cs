@@ -16,7 +16,7 @@ namespace UnitTest.UnitTest.JustReadCollectionTest
       JustReadCollection<int> testCollection =  TestJustReadCollectionFactory.TestData(Array.ints);
 
       testCollection.PerEvery(elem => counter++);
-      Assert.AreEqual(7, counter);
+      Assert.AreEqual(testCollection.Count, counter);
     }
 
     [TestMethod]
