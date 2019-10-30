@@ -1,9 +1,9 @@
 ﻿using Software919.ReaOnlyCollection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Text;
-using UnitTest.TestData;
+using TestData;
 
-namespace UnitTest.UnitTest.JustReadCollectionTest
+namespace JustReadCollectionTest
 {
   [TestClass]
   public class PerEveryTests

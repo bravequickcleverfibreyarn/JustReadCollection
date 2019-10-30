@@ -1,9 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Software919.ReaOnlyCollection;
 using System.Linq;
-using UnitTest.TestData;
+using TestData;
 
-namespace MS_UnitTest__Framework_.UnitTest
+namespace IListExtensionsTests
 {
   [TestClass]
   public class IListExtensionsTests

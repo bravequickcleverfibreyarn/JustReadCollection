@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JustReadCollection</name>
+    </assembly>
+    <members>
+        <member name="T:Software919.ReaOnlyCollection.JustReadCollection`1">
+            <summary>
+            Extended read only collection.
+            </summary>  
+        </member>
+        <member name="M:Software919.ReaOnlyCollection.JustReadCollection`1.ArrayExtract(System.Int32,System.Int32)">
+            <summary>
+            Collection slice in T[].
+            </summary>    
+        </member>
+        <member name="M:Software919.ReaOnlyCollection.JustReadCollection`1.ListExtract(System.Int32,System.Int32)">
+            <summary>
+            Collection slice in <see cref="T:System.Collections.Generic.List`1"/>.
+            </summary>    
+        </member>
+        <member name="M:Software919.ReaOnlyCollection.JustReadCollection`1.Array">
+            <summary>
+            Collection in new T[].
+            </summary>        
+        </member>
+        <member name="M:Software919.ReaOnlyCollection.JustReadCollection`1.List">
+            <summary>
+            Collection in new <see cref="T:System.Collections.Generic.List`1"/>.
+            </summary>
+        </member>
+        <member name="M:Software919.ReaOnlyCollection.JustReadCollection`1.PerEvery(System.Action{`0})">
+            <summary>
+            Invokes action for each item in collection.
+            </summary>
+        </member>
+        <member name="M:Software919.ReaOnlyCollection.JustReadCollection`1.CopyFromItems(System.Int32,System.Int32)">
+            <summary>
+            Copies to T[].
+            </summary>    
+        </member>
+        <member name="M:Software919.ReaOnlyCollection.JustReadCollection`1.CopyFromItems(`0[],`0[],System.Int32,System.Int32)">
+            <summary>
+            Copies to T[] from T[] items.
+            </summary> 
+        </member>
+        <member name="M:Software919.ReaOnlyCollection.JustReadCollection`1.CopyFromItems(`0[],System.Int32,System.Int32)">
+            <summary>
+            Copies to T[] from non-array Items.
+            </summary>    
+        </member>
+        <member name="T:Software919.ReaOnlyCollection.SwiftReadCollection`1">
+            <summary>
+            Extended read only collection for unmanged types.
+            </summary>  
+        </member>
+    </members>
+</doc>

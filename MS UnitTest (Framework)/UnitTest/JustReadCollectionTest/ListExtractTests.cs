@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using UnitTest.TestData;
+using TestData;
 
-namespace UnitTest.UnitTest.JustReadCollectionTest
+namespace JustReadCollectionTest
 {
   [TestClass]
   public class ListExtractTests
@@ -21,6 +21,11 @@ namespace UnitTest.UnitTest.JustReadCollectionTest
     [DataRow(0, 3, TestJustReadCollectionFactory.LIST)] // min. index
     [DataRow(3, 4, TestJustReadCollectionFactory.LIST)] // max. count    
     [DataRow(0, 7, TestJustReadCollectionFactory.LIST)] // CopyTo
+
+    [DataRow(1, 3, TestJustReadCollectionFactory.COLLECTION)]
+    [DataRow(0, 3, TestJustReadCollectionFactory.COLLECTION)] // min. index
+    [DataRow(3, 4, TestJustReadCollectionFactory.COLLECTION)] // max. count    
+    [DataRow(0, 7, TestJustReadCollectionFactory.COLLECTION)] // CopyTo
     public void ListExtract_CorrectDemands_ComplyWithExpectations(int index, int count, string underlayingCollection)
     {
       if (testRun == 1)
@@ -29,7 +34,7 @@ namespace UnitTest.UnitTest.JustReadCollectionTest
       }
       Debug.WriteLine(testRun++);
 
-      IList<int> testCollection = underlayingCollection == TestJustReadCollectionFactory.ARRAY ? TestData.Array.ints : (IList<int>)List.ints;
+      IList<int> testCollection = TestJustReadCollectionFactory.GetTestCollection(underlayingCollection);
 
       List<int> listExtract = TestJustReadCollectionFactory.TestData(testCollection).ListExtract(index, count);
       Assert.IsTrue(Enumerable.SequenceEqual(listExtract, testCollection.Skip(index).Take(count)));

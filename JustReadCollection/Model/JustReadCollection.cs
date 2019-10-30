@@ -5,42 +5,61 @@ using System.Diagnostics;
 
 namespace Software919.ReaOnlyCollection
 {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   static public partial class IListExtensions
   {
     static public JustReadCollection<T> AsJustReadCollection<T>(this IList<T> iList) => new JustReadCollection<T>(iList);
   }
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 
   /// <summary>
   /// Extended read only collection.
   /// </summary>  
   public class JustReadCollection<T> : ReadOnlyCollection<T>
   {
+
+#if DEBUG
     const string
       toArrayfromArray = "To T[], from T[].",
       toArrayfromNonArray = "To T[], from non-array Items.";
+#endif
+
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+    protected bool ItemsIsList => Items is List<T>;
 
     public JustReadCollection(IList<T> iList) : base(iList) { }
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 
     #region Extract
 
     /// <summary>
     /// Collection slice in T[].
     /// </summary>    
-    public T[] ArrayExtract(int index, int count)
+    public T[] ArrayExtract(int start, int count)
     {
-      Validate(index, count);
+      Validate(start, count);
 
-      return CopyFromItems(index, count); ;
+      if (ItemsIsList)
+      {
+        var extract = new T[count];
+        ((List<T>)Items).CopyTo(start, extract, 0, count);
+
+        return extract;
+      }
+      
+      return CopyFromItems(start, count);
     }
 
     /// <summary>
     /// Collection slice in <see cref="List{T}"/>.
     /// </summary>    
-    public List<T> ListExtract(int index, int count)
+    public List<T> ListExtract(int start, int count)
     {
-      Validate(index, count);
+      Validate(start, count);
 
-      return new List<T>(CopyFromItems(index, count));
+      return ItemsIsList
+        ? ((List<T>)Items).GetRange(start, count)
+        : new List<T>(CopyFromItems(start, count));
     }
 
     void Validate(int index, int count)
@@ -63,13 +82,18 @@ namespace Software919.ReaOnlyCollection
     /// <summary>
     /// Collection in new T[].
     /// </summary>        
-    public T[] Array() => CopyFromItems(0, Items.Count);
+    public T[] Array()
+    {
+      return ItemsIsList
+        ? ((List<T>)Items).ToArray()
+        : CopyFromItems(0, Items.Count);
+    }
 
     /// <summary>
     /// Collection in new <see cref="List{T}"/>.
     /// </summary>
-    public List<T> List() => new List<T>(Items);
-
+    public List<T> List() => new List<T>(Items);    
+    
     #endregion
 
     /// <summary>
@@ -91,21 +115,21 @@ namespace Software919.ReaOnlyCollection
       var newArr = new T[count];
 
 #if DEBUG
-      var rollPrefix = "Choice: ";
+      Debug.Write("Choice: ");
 #endif
 
       if (Items is T[] items)
       {
 #if DEBUG
 
-        Debug.WriteLine($"{rollPrefix}: {toArrayfromArray}");
+        Debug.WriteLine(toArrayfromArray);
 #endif
         CopyFromItems(items, newArr, start, count);
       }
       else
       {
 #if DEBUG
-        Debug.WriteLine($"{rollPrefix}: {toArrayfromNonArray}");
+        Debug.WriteLine(toArrayfromNonArray);
 #endif
         CopyFromItems(newArr, start, count);
       }
@@ -118,14 +142,14 @@ namespace Software919.ReaOnlyCollection
     /// <summary>
     /// Copies to T[] from T[] items.
     /// </summary> 
-    virtual protected void CopyFromItems(T[] items, T[] arr, int index, int count)
+    virtual protected void CopyFromItems(T[] items, T[] arr, int start, int count)
     {
 
 #if DEBUG
       Debug.WriteLine(toArrayfromArray);
 #endif
 
-      System.Array.Copy(items, index, arr, 0, count);
+      System.Array.Copy(items, start, arr, 0, count);
     }
 
     /// <summary>
@@ -147,13 +171,42 @@ namespace Software919.ReaOnlyCollection
       {
 
 #if DEBUG
-        Debug.WriteLine("   Iterating.");
+        Debug.Write("   Iterating in mode");
 #endif
-        for (var i = 0; i < count; ++i)
+        if (count % 3 == 0)
         {
-#pragma warning disable CA1062 // Validate arguments of public methods
-          arr[i] = Items[start++];
-#pragma warning restore CA1062 // Validate arguments of public methods
+
+#if DEBUG
+        Debug.WriteLine(" 3.");
+#endif
+          for (int i = 0, j = 1, k = 2; k < count; i += 3, j += 3, k += 3)
+          {
+            arr[i] = Items[start++];
+            arr[j] = Items[start++];
+            arr[k] = Items[start++];
+          }
+        }        
+        else if (count % 2 == 0)
+        {
+
+#if DEBUG
+        Debug.WriteLine(" 2.");
+#endif
+          for (int i = 0, j = 1; j < count; i += 2, j += 2)
+          {
+            arr[i] = Items[start++];
+            arr[j] = Items[start++];
+          }
+        }
+        else
+        {
+#if DEBUG
+        Debug.WriteLine(" 1.");
+#endif
+          for (int i = 0; i < count; ++i)
+          {
+            arr[i] = Items[start++];            
+          }
         }
       }
     }

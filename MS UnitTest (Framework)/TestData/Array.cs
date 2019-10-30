@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace UnitTest.TestData
+namespace TestData
 {
   static public class Array
   {

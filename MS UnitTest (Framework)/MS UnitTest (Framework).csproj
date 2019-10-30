@@ -53,12 +53,13 @@
   <ItemGroup>
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="TestData\Array.cs" />
+    <Compile Include="TestData\Collection.cs" />
     <Compile Include="TestData\List.cs" />
     <Compile Include="TestData\TestJustReadCollectionFactory.cs" />
-    <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitTest\IListExtensionsTests.cs" />
     <Compile Include="UnitTest\JustReadCollectionTest\ArrayExtractTests.cs" />
+    <Compile Include="UnitTest\JustReadCollectionTest\IterationTests.cs" />
     <Compile Include="UnitTest\JustReadCollectionTest\ListExtractTests.cs" />
     <Compile Include="UnitTest\JustReadCollectionTest\NewCollectionTests.cs" />
     <Compile Include="UnitTest\JustReadCollectionTest\PerEveryTests.cs" />

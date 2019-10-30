@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace UnitTest.TestData
+namespace TestData
 {
   static public class List
   {
