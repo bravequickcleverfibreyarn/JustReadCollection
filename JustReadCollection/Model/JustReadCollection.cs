@@ -33,7 +33,7 @@ namespace Software919.ReaOnlyCollection
     #region Extract
 
     /// <summary>
-    /// Collection slice in T[].
+    /// Collection slice in new T[].
     /// </summary>    
     public T[] ArrayExtract(int start, int count)
     {
@@ -51,7 +51,7 @@ namespace Software919.ReaOnlyCollection
     }
 
     /// <summary>
-    /// Collection slice in <see cref="List{T}"/>.
+    /// Collection slice in new List{T}.
     /// </summary>    
     public List<T> ListExtract(int start, int count)
     {
@@ -90,7 +90,7 @@ namespace Software919.ReaOnlyCollection
     }
 
     /// <summary>
-    /// Collection in new <see cref="List{T}"/>.
+    /// Collection in new List{T}.
     /// </summary>
     public List<T> List() => new List<T>(Items);    
     

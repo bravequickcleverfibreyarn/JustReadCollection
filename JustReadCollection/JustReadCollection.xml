@@ -11,12 +11,12 @@
         </member>
         <member name="M:Software919.ReaOnlyCollection.JustReadCollection`1.ArrayExtract(System.Int32,System.Int32)">
             <summary>
-            Collection slice in T[].
+            Collection slice in new T[].
             </summary>    
         </member>
         <member name="M:Software919.ReaOnlyCollection.JustReadCollection`1.ListExtract(System.Int32,System.Int32)">
             <summary>
-            Collection slice in <see cref="T:System.Collections.Generic.List`1"/>.
+            Collection slice in new List{T}.
             </summary>    
         </member>
         <member name="M:Software919.ReaOnlyCollection.JustReadCollection`1.Array">
@@ -26,7 +26,7 @@
         </member>
         <member name="M:Software919.ReaOnlyCollection.JustReadCollection`1.List">
             <summary>
-            Collection in new <see cref="T:System.Collections.Generic.List`1"/>.
+            Collection in new List{T}.
             </summary>
         </member>
         <member name="M:Software919.ReaOnlyCollection.JustReadCollection`1.PerEvery(System.Action{`0})">
@@ -53,6 +53,9 @@
             <summary>
             Extended read only collection for unmanged types.
             </summary>  
+            <remarks>
+            Provides performant way for new T[] operations.
+            </remarks>
         </member>
     </members>
 </doc>
