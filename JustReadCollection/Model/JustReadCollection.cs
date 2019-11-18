@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Linq;
 
 namespace Software919.ReaOnlyCollection
 {
@@ -9,6 +10,21 @@ namespace Software919.ReaOnlyCollection
   static public partial class IListExtensions
   {
     static public JustReadCollection<T> AsJustReadCollection<T>(this IList<T> iList) => new JustReadCollection<T>(iList);
+
+    static public JustReadCollection<T> AsJustReadCollection<T>(this IEnumerable<T> iEnumerable)
+    {
+      return iEnumerable.ToIList().AsJustReadCollection();
+    }
+
+    static IList<T> ToIList<T>(this IEnumerable<T> iEnumerable)
+    {
+      if (iEnumerable is ICollection<T>)
+      {
+        return iEnumerable.ToArray();
+      }
+
+      return iEnumerable.ToList();
+    }
   }
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 

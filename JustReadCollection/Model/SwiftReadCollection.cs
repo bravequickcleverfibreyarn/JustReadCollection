@@ -7,7 +7,15 @@ namespace Software919.ReaOnlyCollection
   static public partial class IListExtensions
   {
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-    static public SwiftReadCollection<T> AsSwiftReadCollection<T>(this IList<T> iList) where T : unmanaged => new SwiftReadCollection<T>(iList);
+    static public SwiftReadCollection<T> AsSwiftReadCollection<T>(this IList<T> iList) where T : unmanaged
+    {
+     return new SwiftReadCollection<T>(iList);
+    }
+
+    static public SwiftReadCollection<T> AsSwiftReadCollection<T>(this IEnumerable<T> iEnumerable) where T : unmanaged
+    {
+      return iEnumerable.ToIList().AsSwiftReadCollection();
+    }
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
   }
 
