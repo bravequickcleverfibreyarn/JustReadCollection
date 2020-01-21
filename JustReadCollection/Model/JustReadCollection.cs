@@ -7,17 +7,22 @@ using System.Linq;
 namespace Software919.ReaOnlyCollection
 {
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-  static public partial class IListExtensions
+  static public partial class CollectionExtensions
   {
     static public JustReadCollection<T> AsJustReadCollection<T>(this IList<T> iList) => new JustReadCollection<T>(iList);
 
-    static public JustReadCollection<T> AsJustReadCollection<T>(this IEnumerable<T> iEnumerable)
+    static public JustReadCollection<T> ToJustReadCollection<T>(this IEnumerable<T> iEnumerable)
     {
       return iEnumerable.ToIList().AsJustReadCollection();
     }
 
     static IList<T> ToIList<T>(this IEnumerable<T> iEnumerable)
     {
+      if (iEnumerable is IList<T> iList)
+      {
+        return iList;
+      }
+
       if (iEnumerable is ICollection<T>)
       {
         return iEnumerable.ToArray();
@@ -62,7 +67,7 @@ namespace Software919.ReaOnlyCollection
 
         return extract;
       }
-      
+
       return CopyFromItems(start, count);
     }
 
@@ -108,8 +113,8 @@ namespace Software919.ReaOnlyCollection
     /// <summary>
     /// Collection in new List{T}.
     /// </summary>
-    public List<T> List() => new List<T>(Items);    
-    
+    public List<T> List() => new List<T>(Items);
+
     #endregion
 
     /// <summary>
@@ -201,7 +206,7 @@ namespace Software919.ReaOnlyCollection
             arr[j] = Items[start++];
             arr[k] = Items[start++];
           }
-        }        
+        }
         else if (count % 2 == 0)
         {
 
@@ -221,7 +226,7 @@ namespace Software919.ReaOnlyCollection
 #endif
           for (int i = 0; i < count; ++i)
           {
-            arr[i] = Items[start++];            
+            arr[i] = Items[start++];
           }
         }
       }

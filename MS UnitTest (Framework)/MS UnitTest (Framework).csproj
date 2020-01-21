@@ -57,7 +57,7 @@
     <Compile Include="TestData\List.cs" />
     <Compile Include="TestData\TestJustReadCollectionFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UnitTest\IListExtensionsTests.cs" />
+    <Compile Include="UnitTest\CollectionExtensionsTests.cs" />
     <Compile Include="UnitTest\JustReadCollectionTest\ArrayExtractTests.cs" />
     <Compile Include="UnitTest\JustReadCollectionTest\IterationTests.cs" />
     <Compile Include="UnitTest\JustReadCollectionTest\ListExtractTests.cs" />

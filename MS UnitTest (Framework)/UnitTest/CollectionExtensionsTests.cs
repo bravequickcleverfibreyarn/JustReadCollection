@@ -3,10 +3,10 @@ using Software919.ReaOnlyCollection;
 using System.Linq;
 using TestData;
 
-namespace IListExtensionsTests
+namespace CollectionExtensionsTests
 {
   [TestClass]
-  public class IListExtensionsTests
+  public class CollectionExtensionsTests
   {
 
     [TestMethod]

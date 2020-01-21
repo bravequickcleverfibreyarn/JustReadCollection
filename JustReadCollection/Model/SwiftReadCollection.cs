@@ -4,7 +4,7 @@ using System.Diagnostics;
 
 namespace Software919.ReaOnlyCollection
 {
-  static public partial class IListExtensions
+  static public partial class CollectionExtensions
   {
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
     static public SwiftReadCollection<T> AsSwiftReadCollection<T>(this IList<T> iList) where T : unmanaged
@@ -12,7 +12,7 @@ namespace Software919.ReaOnlyCollection
      return new SwiftReadCollection<T>(iList);
     }
 
-    static public SwiftReadCollection<T> AsSwiftReadCollection<T>(this IEnumerable<T> iEnumerable) where T : unmanaged
+    static public SwiftReadCollection<T> ToSwiftReadCollection<T>(this IEnumerable<T> iEnumerable) where T : unmanaged
     {
       return iEnumerable.ToIList().AsSwiftReadCollection();
     }
