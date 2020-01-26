@@ -9,7 +9,7 @@ namespace Software919.ReaOnlyCollection
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
     static public SwiftReadCollection<T> AsSwiftReadCollection<T>(this IList<T> iList) where T : unmanaged
     {
-     return new SwiftReadCollection<T>(iList);
+      return new SwiftReadCollection<T>(iList);
     }
 
     static public SwiftReadCollection<T> ToSwiftReadCollection<T>(this IEnumerable<T> iEnumerable) where T : unmanaged
@@ -37,13 +37,16 @@ namespace Software919.ReaOnlyCollection
       Debug.WriteLine("To T[], from T[] (unmanaged way).");
 #endif
 
-      int typeSize;
       unsafe
       {
-        typeSize = sizeof(T);
-      }
+        long byteSize = count * sizeof(T);
 
-      Buffer.BlockCopy(items, start * typeSize, arr, 0, typeSize * count);
+        fixed (void* source = &items[start])
+        fixed (void* destination = &arr[0])
+        {
+          Buffer.MemoryCopy(source, destination, byteSize, byteSize);
+        }
+      }
 
     }
   }
