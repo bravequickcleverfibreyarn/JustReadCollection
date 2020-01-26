@@ -54,7 +54,7 @@
             Extended read only collection for unmanged types.
             </summary>  
             <remarks>
-            Provides performant way for new T[] operations.
+            Provides performant way for T[] operations (if <see cref="!:ReadOnlyCollection&lt;T&gt;" />.Items is T[]).
             </remarks>
         </member>
     </members>
