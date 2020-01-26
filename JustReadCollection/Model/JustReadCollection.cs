@@ -98,7 +98,7 @@ namespace Software919.ReaOnlyCollection
 
     #endregion
 
-    #region To new collection
+    #region New
 
     /// <summary>
     /// Collection in new T[].
