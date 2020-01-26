@@ -41,9 +41,10 @@ namespace Software919.ReaOnlyCollection
       {
         long byteSize = count * sizeof(T);
 
-        fixed (void* source = &items[start])
-        fixed (void* destination = &arr[0])
+        fixed (T* fixedItems = items)        
+        fixed (void* destination = arr)
         {
+          void* source = &fixedItems[start];
           Buffer.MemoryCopy(source, destination, byteSize, byteSize);
         }
       }
