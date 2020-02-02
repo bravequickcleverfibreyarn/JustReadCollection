@@ -48,7 +48,7 @@ namespace Software919.ReaOnlyCollection
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
     protected bool ItemsIsList => Items is List<T>;
 
-    public JustReadCollection(IList<T> iList) : base(iList) { }
+    public JustReadCollection(in IList<T> iList) : base(iList) { }
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 
     #region Extract
@@ -56,7 +56,7 @@ namespace Software919.ReaOnlyCollection
     /// <summary>
     /// Collection slice in new T[].
     /// </summary>    
-    public T[] ArrayExtract(int start, int count)
+    public T[] ArrayExtract(in int start, in int count)
     {
       Validate(start, count);
 
@@ -74,7 +74,7 @@ namespace Software919.ReaOnlyCollection
     /// <summary>
     /// Collection slice in new List{T}.
     /// </summary>    
-    public List<T> ListExtract(int start, int count)
+    public List<T> ListExtract(in int start, in int count)
     {
       Validate(start, count);
 
@@ -83,7 +83,7 @@ namespace Software919.ReaOnlyCollection
         : new List<T>(CopyFromItems(start, count));
     }
 
-    void Validate(int index, int count)
+    void Validate(in int index, in int count)
     {
       if (index < 0 || index > Items.Count - 1)
       {
@@ -120,7 +120,7 @@ namespace Software919.ReaOnlyCollection
     /// <summary>
     /// Invokes action for each item in collection.
     /// </summary>
-    public void PerEvery(Action<T> action)
+    public void PerEvery(in Action<T> action)
     {
       for (var i = 0; i < Items.Count; ++i)
       {
@@ -131,7 +131,7 @@ namespace Software919.ReaOnlyCollection
     /// <summary>
     /// Copies to T[].
     /// </summary>    
-    T[] CopyFromItems(int start, int count)
+    T[] CopyFromItems(in int start, in int count)
     {
       var newArr = new T[count];
 
@@ -163,7 +163,7 @@ namespace Software919.ReaOnlyCollection
     /// <summary>
     /// Copies to T[] from T[] items.
     /// </summary> 
-    virtual protected void CopyFromItems(T[] items, T[] arr, int start, int count)
+    virtual protected void CopyFromItems(in T[] items, in T[] arr, in int start, in int count)
     {
 
 #if DEBUG
@@ -176,7 +176,7 @@ namespace Software919.ReaOnlyCollection
     /// <summary>
     /// Copies to T[] from non-array Items.
     /// </summary>    
-    virtual protected void CopyFromItems(T[] arr, int start, int count)
+    virtual protected void CopyFromItems(in T[] arr, int start, in int count)
     {
 #if DEBUG
       Debug.WriteLine(toArrayfromNonArray);

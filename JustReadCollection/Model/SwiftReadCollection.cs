@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 
 namespace Software919.ReaOnlyCollection
@@ -28,9 +29,9 @@ namespace Software919.ReaOnlyCollection
   sealed public class SwiftReadCollection<T> : JustReadCollection<T> where T : unmanaged
   {
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-    public SwiftReadCollection(IList<T> iList) : base(iList) { }
+    public SwiftReadCollection(in IList<T> iList) : base(iList) { }
 
-    override protected void CopyFromItems(T[] items, T[] arr, int start, int count)
+    override protected void CopyFromItems(in T[] items, in T[] arr, in int start, in int count)
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
     {
 #if DEBUG
