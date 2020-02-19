@@ -17,6 +17,7 @@
     <RootNamespace>Software9119.ReadCollection</RootNamespace>
     <AssemblyName>Software9119.ReadCollection</AssemblyName>
     <Product>ReadCollection</Product>
+    <Copyright>Peroral consent needed.</Copyright>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
