@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 
-namespace Software9119.ReaOnlyCollection
+namespace Software9119.ReadCollection
 {
   static public partial class CollectionExtensions
   {

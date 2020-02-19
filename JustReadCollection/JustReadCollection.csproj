@@ -13,8 +13,10 @@
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <FileVersion>1.0.0.0</FileVersion>
     <Version>1.0.0</Version>
-    <PackageId>Software9119.JustReadCollection</PackageId>
-    <RootNamespace>Software9119.JustReadCollection</RootNamespace>
+    <PackageId>Software9119.ReadCollection</PackageId>
+    <RootNamespace>Software9119.ReadCollection</RootNamespace>
+    <AssemblyName>Software9119.ReadCollection</AssemblyName>
+    <Product>ReadCollection</Product>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

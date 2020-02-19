@@ -1,55 +1,55 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>JustReadCollection</name>
+        <name>Software9119.ReadCollection</name>
     </assembly>
     <members>
-        <member name="T:Software9119.ReaOnlyCollection.JustReadCollection`1">
+        <member name="T:Software9119.ReadCollection.JustReadCollection`1">
             <summary>
             Extended read only collection.
             </summary>  
         </member>
-        <member name="M:Software9119.ReaOnlyCollection.JustReadCollection`1.ArrayExtract(System.Int32@,System.Int32@)">
+        <member name="M:Software9119.ReadCollection.JustReadCollection`1.ArrayExtract(System.Int32@,System.Int32@)">
             <summary>
             Collection slice in new T[].
             </summary>    
         </member>
-        <member name="M:Software9119.ReaOnlyCollection.JustReadCollection`1.ListExtract(System.Int32@,System.Int32@)">
+        <member name="M:Software9119.ReadCollection.JustReadCollection`1.ListExtract(System.Int32@,System.Int32@)">
             <summary>
             Collection slice in new List{T}.
             </summary>    
         </member>
-        <member name="M:Software9119.ReaOnlyCollection.JustReadCollection`1.Array">
+        <member name="M:Software9119.ReadCollection.JustReadCollection`1.Array">
             <summary>
             Collection in new T[].
             </summary>        
         </member>
-        <member name="M:Software9119.ReaOnlyCollection.JustReadCollection`1.List">
+        <member name="M:Software9119.ReadCollection.JustReadCollection`1.List">
             <summary>
             Collection in new List{T}.
             </summary>
         </member>
-        <member name="M:Software9119.ReaOnlyCollection.JustReadCollection`1.PerEvery(System.Action{`0}@)">
+        <member name="M:Software9119.ReadCollection.JustReadCollection`1.PerEvery(System.Action{`0}@)">
             <summary>
             Invokes action for each item in collection.
             </summary>
         </member>
-        <member name="M:Software9119.ReaOnlyCollection.JustReadCollection`1.CopyFromItems(System.Int32@,System.Int32@)">
+        <member name="M:Software9119.ReadCollection.JustReadCollection`1.CopyFromItems(System.Int32@,System.Int32@)">
             <summary>
             Copies to T[].
             </summary>    
         </member>
-        <member name="M:Software9119.ReaOnlyCollection.JustReadCollection`1.CopyFromItems(`0[]@,`0[]@,System.Int32@,System.Int32@)">
+        <member name="M:Software9119.ReadCollection.JustReadCollection`1.CopyFromItems(`0[]@,`0[]@,System.Int32@,System.Int32@)">
             <summary>
             Copies to T[] from T[] items.
             </summary> 
         </member>
-        <member name="M:Software9119.ReaOnlyCollection.JustReadCollection`1.CopyFromItems(`0[]@,System.Int32,System.Int32@)">
+        <member name="M:Software9119.ReadCollection.JustReadCollection`1.CopyFromItems(`0[]@,System.Int32,System.Int32@)">
             <summary>
             Copies to T[] from non-array Items.
             </summary>    
         </member>
-        <member name="T:Software9119.ReaOnlyCollection.SwiftReadCollection`1">
+        <member name="T:Software9119.ReadCollection.SwiftReadCollection`1">
             <summary>
             Extended read only collection for unmanged types.
             </summary>  

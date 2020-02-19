@@ -5,7 +5,7 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 
-namespace Software9119.ReaOnlyCollection
+namespace Software9119.ReadCollection
 {
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   static public partial class CollectionExtensions
