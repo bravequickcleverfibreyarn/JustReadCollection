@@ -1,9 +1,8 @@
-﻿using Software9119.Collection;
+﻿using Software9119.Aid.Collection;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
-using System.Linq;
 
 namespace Software9119.ReadCollection
 {
