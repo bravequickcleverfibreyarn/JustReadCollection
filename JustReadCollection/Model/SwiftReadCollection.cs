@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Software9119.Collection;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 
-namespace Software919.ReaOnlyCollection
+namespace Software9119.ReaOnlyCollection
 {
   static public partial class CollectionExtensions
   {

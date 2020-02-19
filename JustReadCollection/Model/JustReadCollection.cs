@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Software9119.Collection;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 
-namespace Software919.ReaOnlyCollection
+namespace Software9119.ReaOnlyCollection
 {
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   static public partial class CollectionExtensions
@@ -14,21 +15,6 @@ namespace Software919.ReaOnlyCollection
     static public JustReadCollection<T> ToJustReadCollection<T>(this IEnumerable<T> iEnumerable)
     {
       return iEnumerable.ToIList().AsJustReadCollection();
-    }
-
-    static IList<T> ToIList<T>(this IEnumerable<T> iEnumerable)
-    {
-      if (iEnumerable is IList<T> iList)
-      {
-        return iList;
-      }
-
-      if (iEnumerable is ICollection<T>)
-      {
-        return iEnumerable.ToArray();
-      }
-
-      return iEnumerable.ToList();
     }
   }
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
