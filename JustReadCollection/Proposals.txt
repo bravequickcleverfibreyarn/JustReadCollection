@@ -1,3 +1,4 @@
-﻿1. Založit nový projekt s novýmy jmény; JustReadCollection na JustReadList?
+﻿1. Založit nový projekt s novýmy jmény; JustReadCollection na JustReadList? Ještě lépe ReadList, SwiftReadList.
 2. Introduce ReadCollection<T> consuming ICollection<T> in constructor. (Nebude to dědit IList<T>.)
 3. Zbavit se nějak nesplěných kontraktů (throwingů) (?). Nutná vlastní rozhraní.
+4. Změnit JustReadCollection na ReadCollection.
