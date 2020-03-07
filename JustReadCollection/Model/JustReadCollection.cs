@@ -7,15 +7,14 @@ using System.Diagnostics;
 
 namespace Software9119.ReadCollection
 {
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   static public partial class CollectionExtensions
   {
+    /// <param name="emptyForNull">Choses null or empty collection for null source.</param>
     static public JustReadCollection<T> ToJustReadCollection<T>(this IEnumerable<T> iEnumerable, bool emptyForNull)
     {
       return CollectionExtensionsAux.ReturnNull(iEnumerable, emptyForNull) ? null : new JustReadCollection<T>(iEnumerable.ToIList(emptyForNull));
     }
   }
-#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 
   /// <summary>
   /// Extended read only collection.

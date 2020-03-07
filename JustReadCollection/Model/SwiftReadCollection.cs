@@ -9,12 +9,11 @@ namespace Software9119.ReadCollection
 {
   static public partial class CollectionExtensions
   {
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+    /// <param name="emptyForNull">Choses null or empty collection for null source.</param>
     static public SwiftReadCollection<T> ToSwiftReadCollection<T>(this IEnumerable<T> iEnumerable, bool emptyForNull) where T : unmanaged
     {
       return CollectionExtensionsAux.ReturnNull(iEnumerable, emptyForNull) ? null : new SwiftReadCollection<T>(iEnumerable.ToIList(emptyForNull));
     }
-#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
   }
 
   /// <summary>
