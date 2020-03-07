@@ -1,4 +1,5 @@
 ﻿using Software9119.Aid.Collection;
+using Software9119.ReadCollection.Auxiliary;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -9,11 +10,9 @@ namespace Software9119.ReadCollection
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   static public partial class CollectionExtensions
   {
-    static public JustReadCollection<T> AsJustReadCollection<T>(this IList<T> iList) => new JustReadCollection<T>(iList);
-
-    static public JustReadCollection<T> ToJustReadCollection<T>(this IEnumerable<T> iEnumerable)
+    static public JustReadCollection<T> ToJustReadCollection<T>(this IEnumerable<T> iEnumerable, bool emptyForNull)
     {
-      return iEnumerable.ToIList().AsJustReadCollection();
+      return CollectionExtensionsAux.ReturnNull(iEnumerable, emptyForNull) ? null : new JustReadCollection<T>(iEnumerable.ToIList(emptyForNull));
     }
   }
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member

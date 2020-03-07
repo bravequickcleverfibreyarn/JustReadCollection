@@ -39,13 +39,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Software9119.Aid" Version="1.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="Aid">
-      <HintPath>..\..\Aid\Aid\bin\Release\netstandard2.0\Aid.dll</HintPath>
-    </Reference>
+    <PackageReference Include="Software9119.Aid" Version="2.0.0" />
   </ItemGroup>
 
 </Project>

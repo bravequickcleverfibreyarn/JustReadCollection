@@ -1,4 +1,5 @@
 ﻿using Software9119.Aid.Collection;
+using Software9119.ReadCollection.Auxiliary;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -9,14 +10,9 @@ namespace Software9119.ReadCollection
   static public partial class CollectionExtensions
   {
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-    static public SwiftReadCollection<T> AsSwiftReadCollection<T>(this IList<T> iList) where T : unmanaged
+    static public SwiftReadCollection<T> ToSwiftReadCollection<T>(this IEnumerable<T> iEnumerable, bool emptyForNull) where T : unmanaged
     {
-      return new SwiftReadCollection<T>(iList);
-    }
-
-    static public SwiftReadCollection<T> ToSwiftReadCollection<T>(this IEnumerable<T> iEnumerable) where T : unmanaged
-    {
-      return iEnumerable.ToIList().AsSwiftReadCollection();
+      return CollectionExtensionsAux.ReturnNull(iEnumerable, emptyForNull) ? null : new SwiftReadCollection<T>(iEnumerable.ToIList(emptyForNull));
     }
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
   }
