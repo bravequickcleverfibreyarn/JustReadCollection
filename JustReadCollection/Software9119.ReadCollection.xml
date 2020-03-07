@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Software9119.ReadCollection</name>
+    </assembly>
+    <members>
+        <member name="M:Software9119.ReadCollection.CollectionExtensions.ToJustReadCollection``1(System.Collections.Generic.IEnumerable{``0},System.Boolean)">
+            <param name="emptyForNull">Choses null or empty collection for null source.</param>
+        </member>
+        <member name="M:Software9119.ReadCollection.CollectionExtensions.ToSwiftReadCollection``1(System.Collections.Generic.IEnumerable{``0},System.Boolean)">
+            <param name="emptyForNull">Choses null or empty collection for null source.</param>
+        </member>
+        <member name="T:Software9119.ReadCollection.JustReadCollection`1">
+            <summary>
+            Extended read only collection.
+            </summary>  
+        </member>
+        <member name="M:Software9119.ReadCollection.JustReadCollection`1.ArrayExtract(System.Int32@,System.Int32@)">
+            <summary>
+            Collection slice in new T[].
+            </summary>    
+        </member>
+        <member name="M:Software9119.ReadCollection.JustReadCollection`1.ListExtract(System.Int32@,System.Int32@)">
+            <summary>
+            Collection slice in new List{T}.
+            </summary>    
+        </member>
+        <member name="M:Software9119.ReadCollection.JustReadCollection`1.Array">
+            <summary>
+            Collection in new T[].
+            </summary>        
+        </member>
+        <member name="M:Software9119.ReadCollection.JustReadCollection`1.List">
+            <summary>
+            Collection in new List{T}.
+            </summary>
+        </member>
+        <member name="M:Software9119.ReadCollection.JustReadCollection`1.PerEvery(System.Action{`0}@)">
+            <summary>
+            Invokes action for each item in collection.
+            </summary>
+        </member>
+        <member name="M:Software9119.ReadCollection.JustReadCollection`1.CopyFromItems(System.Int32@,System.Int32@)">
+            <summary>
+            Copies to T[].
+            </summary>    
+        </member>
+        <member name="M:Software9119.ReadCollection.JustReadCollection`1.CopyFromItems(`0[]@,`0[]@,System.Int32@,System.Int32@)">
+            <summary>
+            Copies to T[] from T[] items.
+            </summary> 
+        </member>
+        <member name="M:Software9119.ReadCollection.JustReadCollection`1.CopyFromItems(`0[]@,System.Int32,System.Int32@)">
+            <summary>
+            Copies to T[] from non-array Items.
+            </summary>    
+        </member>
+        <member name="T:Software9119.ReadCollection.SwiftReadCollection`1">
+            <summary>
+            Extended read only collection for unmanged types.
+            </summary>  
+            <remarks>
+            Provides performant way for T[] operations (if <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />.Items is T[]).
+            </remarks>
+        </member>
+    </members>
+</doc>

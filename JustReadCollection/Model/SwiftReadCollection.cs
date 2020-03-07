@@ -9,11 +9,15 @@ namespace Software9119.ReadCollection
 {
   static public partial class CollectionExtensions
   {
+
+#pragma warning disable CS1573 // Parameter has no matching param tag in the XML comment (but other parameters do)
     /// <param name="emptyForNull">Choses null or empty collection for null source.</param>
     static public SwiftReadCollection<T> ToSwiftReadCollection<T>(this IEnumerable<T> iEnumerable, bool emptyForNull) where T : unmanaged
+#pragma warning restore CS1573 // Parameter has no matching param tag in the XML comment (but other parameters do)
     {
       return CollectionExtensionsAux.ReturnNull(iEnumerable, emptyForNull) ? null : new SwiftReadCollection<T>(iEnumerable.ToIList(emptyForNull));
     }
+
   }
 
   /// <summary>

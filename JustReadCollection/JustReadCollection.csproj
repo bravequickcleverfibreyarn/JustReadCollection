@@ -10,9 +10,9 @@
     <LangVersion>7.3</LangVersion>
     <Description>Read only collections with additional aspects.</Description>
     <PackageReleaseNotes />
-    <AssemblyVersion>2.0.1.0</AssemblyVersion>
-    <FileVersion>2.0.1.0</FileVersion>
-    <Version>2.0.1</Version>
+    <AssemblyVersion>2.0.2.0</AssemblyVersion>
+    <FileVersion>2.0.2.0</FileVersion>
+    <Version>2.0.2</Version>
     <PackageId>Software9119.ReadCollection</PackageId>
     <RootNamespace>Software9119.ReadCollection</RootNamespace>
     <AssemblyName>Software9119.ReadCollection</AssemblyName>
@@ -23,11 +23,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <DefineConstants>DEBUG</DefineConstants>
+    <DocumentationFile>c:\Users\JC\source\repos\JustReadCollection\JustReadCollection\Software9119.ReadCollection.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <DocumentationFile>C:\Users\JC\source\repos\JustReadCollection\JustReadCollection\JustReadCollection.xml</DocumentationFile>
+    <DocumentationFile>c:\Users\JC\source\repos\JustReadCollection\JustReadCollection\Software9119.ReadCollection.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -39,7 +40,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Software9119.Aid" Version="2.0.0" />
+    <PackageReference Include="Software9119.Aid" Version="2.0.2" />
   </ItemGroup>
 
 </Project>
