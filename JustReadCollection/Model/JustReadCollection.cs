@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
-using System.Runtime.InteropServices;
 
 namespace Software9119.ReadCollection
 {
@@ -15,7 +14,7 @@ namespace Software9119.ReadCollection
 
 #pragma warning disable CS1573 // Parameter has no matching param tag in the XML comment (but other parameters do)
     /// <param name="emptyForNull">Choses null or empty collection for null source.</param>
-    static public JustReadCollection<T> ToJustReadCollection<T>(this IEnumerable<T> iEnumerable, [Optional] bool emptyForNull)
+    static public JustReadCollection<T> ToJustReadCollection<T>(this IEnumerable<T> iEnumerable, bool emptyForNull = default)
 #pragma warning restore CS1573 // Parameter has no matching param tag in the XML comment (but other parameters do)
     {
       return CollectionExtensionsAux.ReturnNull(iEnumerable, emptyForNull) ? null : new JustReadCollection<T>(iEnumerable.ToIList(emptyForNull));
@@ -38,7 +37,7 @@ namespace Software9119.ReadCollection
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
     protected bool ItemsIsList => Items is List<T>;
 
-    public JustReadCollection(in IList<T> iList) : base(iList) { }
+    public JustReadCollection(IList<T> iList) : base(iList) { }
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 
     #region Extract
@@ -46,7 +45,7 @@ namespace Software9119.ReadCollection
     /// <summary>
     /// Collection slice in new T[].
     /// </summary>    
-    public T[] ArrayExtract(in int start, in int count)
+    public T[] ArrayExtract(int start, int count)
     {
       Validate(start, count);
 
@@ -64,7 +63,7 @@ namespace Software9119.ReadCollection
     /// <summary>
     /// Collection slice in new List{T}.
     /// </summary>    
-    public List<T> ListExtract(in int start, in int count)
+    public List<T> ListExtract(int start, int count)
     {
       Validate(start, count);
 
@@ -73,7 +72,7 @@ namespace Software9119.ReadCollection
         : new List<T>(CopyFromItems(start, count));
     }
 
-    void Validate(in int index, in int count)
+    void Validate(int index, int count)
     {
       if (index < 0 || index > Items.Count - 1)
       {
@@ -110,7 +109,7 @@ namespace Software9119.ReadCollection
     /// <summary>
     /// Invokes action for each item in collection.
     /// </summary>
-    public void PerEvery(in Action<T> action)
+    public void PerEvery(Action<T> action)
     {
       for (var i = 0; i < Items.Count; ++i)
       {
@@ -121,7 +120,7 @@ namespace Software9119.ReadCollection
     /// <summary>
     /// Copies to T[].
     /// </summary>    
-    T[] CopyFromItems(in int start, in int count)
+    T[] CopyFromItems(int start, int count)
     {
       var newArr = new T[count];
 
@@ -153,7 +152,7 @@ namespace Software9119.ReadCollection
     /// <summary>
     /// Copies to T[] from T[] items.
     /// </summary> 
-    virtual protected void CopyFromItems(in T[] items, in T[] arr, in int start, in int count)
+    virtual protected void CopyFromItems(T[] items, T[] arr, int start, int count)
     {
 
 #if DEBUG
@@ -166,7 +165,7 @@ namespace Software9119.ReadCollection
     /// <summary>
     /// Copies to T[] from non-array Items.
     /// </summary>    
-    virtual protected void CopyFromItems(in T[] arr, int start, in int count)
+    virtual protected void CopyFromItems(T[] arr, int start, int count)
     {
 #if DEBUG
       Debug.WriteLine(toArrayfromNonArray);

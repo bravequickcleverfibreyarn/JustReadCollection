@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
-using System.Runtime.InteropServices;
 
 namespace Software9119.ReadCollection
 {
@@ -13,7 +12,7 @@ namespace Software9119.ReadCollection
 
 #pragma warning disable CS1573 // Parameter has no matching param tag in the XML comment (but other parameters do)
     /// <param name="emptyForNull">Choses null or empty collection for null source.</param>
-    static public SwiftReadCollection<T> ToSwiftReadCollection<T>(this IEnumerable<T> iEnumerable, [Optional] bool emptyForNull) where T : unmanaged
+    static public SwiftReadCollection<T> ToSwiftReadCollection<T>(this IEnumerable<T> iEnumerable, bool emptyForNull = default) where T : unmanaged
 #pragma warning restore CS1573 // Parameter has no matching param tag in the XML comment (but other parameters do)
     {
       return CollectionExtensionsAux.ReturnNull(iEnumerable, emptyForNull) ? null : new SwiftReadCollection<T>(iEnumerable.ToIList(emptyForNull));
@@ -30,9 +29,9 @@ namespace Software9119.ReadCollection
   sealed public class SwiftReadCollection<T> : JustReadCollection<T> where T : unmanaged
   {
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-    public SwiftReadCollection(in IList<T> iList) : base(iList) { }
+    public SwiftReadCollection(IList<T> iList) : base(iList) { }
 
-    override protected void CopyFromItems(in T[] items, in T[] arr, in int start, in int count)
+    override protected void CopyFromItems(T[] items, T[] arr, int start, int count)
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
     {
 #if DEBUG

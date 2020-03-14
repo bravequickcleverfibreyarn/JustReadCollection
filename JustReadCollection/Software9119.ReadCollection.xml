@@ -15,12 +15,12 @@
             Extended read only collection.
             </summary>  
         </member>
-        <member name="M:Software9119.ReadCollection.JustReadCollection`1.ArrayExtract(System.Int32@,System.Int32@)">
+        <member name="M:Software9119.ReadCollection.JustReadCollection`1.ArrayExtract(System.Int32,System.Int32)">
             <summary>
             Collection slice in new T[].
             </summary>    
         </member>
-        <member name="M:Software9119.ReadCollection.JustReadCollection`1.ListExtract(System.Int32@,System.Int32@)">
+        <member name="M:Software9119.ReadCollection.JustReadCollection`1.ListExtract(System.Int32,System.Int32)">
             <summary>
             Collection slice in new List{T}.
             </summary>    
@@ -35,22 +35,22 @@
             Collection in new List{T}.
             </summary>
         </member>
-        <member name="M:Software9119.ReadCollection.JustReadCollection`1.PerEvery(System.Action{`0}@)">
+        <member name="M:Software9119.ReadCollection.JustReadCollection`1.PerEvery(System.Action{`0})">
             <summary>
             Invokes action for each item in collection.
             </summary>
         </member>
-        <member name="M:Software9119.ReadCollection.JustReadCollection`1.CopyFromItems(System.Int32@,System.Int32@)">
+        <member name="M:Software9119.ReadCollection.JustReadCollection`1.CopyFromItems(System.Int32,System.Int32)">
             <summary>
             Copies to T[].
             </summary>    
         </member>
-        <member name="M:Software9119.ReadCollection.JustReadCollection`1.CopyFromItems(`0[]@,`0[]@,System.Int32@,System.Int32@)">
+        <member name="M:Software9119.ReadCollection.JustReadCollection`1.CopyFromItems(`0[],`0[],System.Int32,System.Int32)">
             <summary>
             Copies to T[] from T[] items.
             </summary> 
         </member>
-        <member name="M:Software9119.ReadCollection.JustReadCollection`1.CopyFromItems(`0[]@,System.Int32,System.Int32@)">
+        <member name="M:Software9119.ReadCollection.JustReadCollection`1.CopyFromItems(`0[],System.Int32,System.Int32)">
             <summary>
             Copies to T[] from non-array Items.
             </summary>    

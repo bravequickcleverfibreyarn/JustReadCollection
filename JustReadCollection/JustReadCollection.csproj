@@ -10,9 +10,9 @@
     <LangVersion>7.3</LangVersion>
     <Description>Read only collections with additional aspects.</Description>
     <PackageReleaseNotes />
-    <AssemblyVersion>2.0.4.0</AssemblyVersion>
-    <FileVersion>2.0.4.0</FileVersion>
-    <Version>2.0.4</Version>
+    <AssemblyVersion>3.0.1.0</AssemblyVersion>
+    <FileVersion>3.0.1.0</FileVersion>
+    <Version>3.0.1</Version>
     <PackageId>Software9119.ReadCollection</PackageId>
     <RootNamespace>Software9119.ReadCollection</RootNamespace>
     <AssemblyName>Software9119.ReadCollection</AssemblyName>
@@ -40,7 +40,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Software9119.Aid" Version="2.0.5" />
+    <PackageReference Include="Software9119.Aid" Version="2.0.7" />
   </ItemGroup>
 
 </Project>

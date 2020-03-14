@@ -34,7 +34,7 @@ namespace Concept.Model
     public LockSwiftReadCollection(bool autolock, bool initiallyLocked, IList<T> iList) : base(autolock, initiallyLocked, iList) { }
 
     // TODO: Buffer.MemoryCopy
-    override protected void CopyFromItems(in T[] items, in T[] newArr, in int index, in int count)
+    override protected void CopyFromItems(T[] items, T[] newArr, int index, int count)
     {
       int typeSize;
       unsafe
