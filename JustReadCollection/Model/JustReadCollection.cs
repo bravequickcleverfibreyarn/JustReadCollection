@@ -152,7 +152,7 @@ namespace Software9119.ReadCollection
     /// <summary>
     /// Copies to T[] from T[] items.
     /// </summary> 
-    virtual protected void CopyFromItems(T[] items, T[] arr, int start, int count)
+    virtual private protected void CopyFromItems(T[] items, T[] arr, int start, int count)
     {
 
 #if DEBUG
@@ -165,7 +165,7 @@ namespace Software9119.ReadCollection
     /// <summary>
     /// Copies to T[] from non-array Items.
     /// </summary>    
-    virtual protected void CopyFromItems(T[] arr, int start, int count)
+    virtual private protected void CopyFromItems(T[] arr, int start, int count)
     {
 #if DEBUG
       Debug.WriteLine(toArrayfromNonArray);

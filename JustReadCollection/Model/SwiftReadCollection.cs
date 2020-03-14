@@ -31,7 +31,7 @@ namespace Software9119.ReadCollection
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
     public SwiftReadCollection(IList<T> iList) : base(iList) { }
 
-    override protected void CopyFromItems(T[] items, T[] arr, int start, int count)
+    override private protected void CopyFromItems(T[] items, T[] arr, int start, int count)
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
     {
 #if DEBUG

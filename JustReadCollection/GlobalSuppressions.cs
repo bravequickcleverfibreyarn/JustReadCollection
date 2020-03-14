@@ -15,4 +15,3 @@
 
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE0022:Use block body for methods", Justification = "<Pending>", Scope = "member", Target = "~M:Software9119.ReadCollection.CollectionExtensions.AsJustReadCollection``1(System.Collections.Generic.IList{``0})~Software9119.ReadCollection.JustReadCollection{``0}")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE0046:Convert to conditional expression", Justification = "<Pending>", Scope = "member", Target = "~M:Software9119.ReadCollection.CollectionExtensions.ToIList``1(System.Collections.Generic.IEnumerable{``0})~System.Collections.Generic.IList{``0}")]
-[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1062:Validate arguments of public methods", Justification = "<Pending>", Scope = "member", Target = "~M:Software9119.ReadCollection.JustReadCollection`1.CopyFromItems(`0[],System.Int32,System.Int32)")]

@@ -33,8 +33,9 @@ namespace Concept.Model
     /// <param name="initiallyLocked">Initial lock state.</param>    
     public LockSwiftReadCollection(bool autolock, bool initiallyLocked, IList<T> iList) : base(autolock, initiallyLocked, iList) { }
 
-    // TODO: Buffer.MemoryCopy
-    override protected void CopyFromItems(T[] items, T[] newArr, int index, int count)
+    // TODO: Buffer.MemoryCopy.
+    // TODO: to private protected.
+    void CopyFromItems(T[] items, T[] newArr, int index, int count)
     {
       int typeSize;
       unsafe
