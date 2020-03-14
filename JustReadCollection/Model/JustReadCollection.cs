@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 
 namespace Software9119.ReadCollection
 {
@@ -14,7 +15,7 @@ namespace Software9119.ReadCollection
 
 #pragma warning disable CS1573 // Parameter has no matching param tag in the XML comment (but other parameters do)
     /// <param name="emptyForNull">Choses null or empty collection for null source.</param>
-    static public JustReadCollection<T> ToJustReadCollection<T>(this IEnumerable<T> iEnumerable, bool emptyForNull)
+    static public JustReadCollection<T> ToJustReadCollection<T>(this IEnumerable<T> iEnumerable, [Optional] bool emptyForNull)
 #pragma warning restore CS1573 // Parameter has no matching param tag in the XML comment (but other parameters do)
     {
       return CollectionExtensionsAux.ReturnNull(iEnumerable, emptyForNull) ? null : new JustReadCollection<T>(iEnumerable.ToIList(emptyForNull));

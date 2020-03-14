@@ -19,6 +19,12 @@ namespace CollectionExtensionsTests
     }
 
     [TestMethod]
+    public void ToJustReadCollection_ProvidedWithNullExpectsDefault_ReturnsNull()
+    {
+      Assert.IsTrue(((IEnumerable<int>)null).ToJustReadCollection() == null);
+    }
+
+    [TestMethod]
     public void ToJustReadCollection_ProvidedWithNullExpectsNull_ReturnsNull()
     {
       Assert.IsTrue(((IEnumerable<int>)null).ToJustReadCollection(false) == null);
@@ -40,7 +46,13 @@ namespace CollectionExtensionsTests
     {
       Assert.IsTrue(List.ints.ToSwiftReadCollection(default).SequenceEqual(List.ints));
     }
-    
+
+    [TestMethod]
+    public void ToSwiftReadCollection_ProvidedWithNullExpectsDefault_ReturnsNull()
+    {
+      Assert.IsTrue(((IEnumerable<int>)null).ToSwiftReadCollection() == null);
+    }
+
     [TestMethod]
     public void ToSwiftReadCollection_ProvidedWithNullExpectsNull_ReturnsNull()
     {
