@@ -24,7 +24,7 @@ namespace Software9119.ReadCollection
   /// Extended read only collection for unmanged types.
   /// </summary>  
   /// <remarks>
-  /// Provides performant way for T[] operations (if <see cref="ReadOnlyCollection{T}" />.Items is T[]).
+  /// Provides performant way for T[] operations (if <see cref="ReadOnlyCollection{T}.Items" /> is T[]).
   /// </remarks>
   sealed public class SwiftReadCollection<T> : JustReadCollection<T> where T : unmanaged
   {

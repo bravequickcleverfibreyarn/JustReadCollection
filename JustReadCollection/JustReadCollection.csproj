@@ -40,7 +40,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Software9119.Aid" Version="2.0.7" />
+    <PackageReference Include="Software9119.Aid" Version="6.1.0" />
   </ItemGroup>
 
 </Project>
