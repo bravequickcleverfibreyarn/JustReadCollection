@@ -6,8 +6,6 @@ namespace Concept.Model
 {
   static public partial class IListExtensions
   {
-#pragma warning disable IDE0022 // Use block body for methods
-
     /// <summary>
     /// <see cref="LockReadCollection{T}"/> by default <see cref="LockReadCollection{T}.LockReadCollection(IList{T})"/> constructor.
     /// </summary>    
@@ -17,8 +15,6 @@ namespace Concept.Model
     /// <see cref="LockReadCollection{T}"/> by full <see cref="LockReadCollection{T}.LockReadCollection(bool, bool, IList{T})"/> constructor.
     /// </summary>
     static public LockReadCollection<T> AsLockReadCollection<T>(this IList<T> iList, bool autolock, bool initiallyLocked) => new LockReadCollection<T>(autolock, initiallyLocked, iList);
-
-#pragma warning restore IDE0022 // Use block body for methods
   }
 
   /// <summary>

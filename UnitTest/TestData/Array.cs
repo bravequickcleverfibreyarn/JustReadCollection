@@ -13,7 +13,7 @@ namespace TestData
       .Select(Convert.ToByte)
       .ToArray();
     readonly static public bool[] bools = TestJustReadCollectionFactory.testCollection
-      .Select(x => x % 2 == 0 ? true : false)
+      .Select(x => x % 2 == 0)
       .ToArray();
 
 

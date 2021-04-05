@@ -11,24 +11,20 @@ namespace TestData
   {
     public const string ARRAY = "Arrray", LIST = "List", COLLECTION = "Collection";
 
-    readonly static public ReadOnlyCollection<int> testCollection = new ReadOnlyCollection<int>(new[] { 11, 22, 33, 44, 55, 66, 127 });
+    readonly static public ReadOnlyCollection<int> testCollection = new(new[] { 11, 22, 33, 44, 55, 66, 127 });
 
-    static public JustReadCollection<T> TestData<T>(IList<T> collection) => new JustReadCollection<T>(collection);
+    static public JustReadCollection<T> TestData<T>(IList<T> collection) => new(collection);
     //static public JustReadCollection<T> TestData<T>(IList<T> collection) where T : unmanaged => new SwiftReadCollection<T>(collection);
 
     static public IList<int> GetTestCollection(string collectionType)
     {
-      switch (collectionType)
+      return collectionType switch
       {
-        case ARRAY:
-          return Array.ints;          
-        case LIST:
-          return List.ints;          
-        case COLLECTION:
-          return Collection.ints;          
-        default:
-          throw new ArgumentException("Unknow underlaying collection type!");
-      }
+        ARRAY => Array.ints,
+        LIST => List.ints,
+        COLLECTION => Collection.ints,
+        _ => throw new ArgumentException("Unknow underlaying collection type!"),
+      };
     }
 
     [TestMethod]
