@@ -14,7 +14,7 @@ namespace TestData
       .Select(Convert.ToByte)
       .ToList();
     readonly static public List<bool> bools = TestJustReadCollectionFactory.testCollection
-      .Select(x => x % 2 == 0 ? true : false)
+      .Select(x => x % 2 == 0)
       .ToList();
 
 

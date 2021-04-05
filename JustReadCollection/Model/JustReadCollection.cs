@@ -1,15 +1,13 @@
 ﻿using Software9119.Aid.Collection;
 using Software9119.ReadCollection.Auxiliary;
+
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
 
 namespace Software9119.ReadCollection
 {
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   static public partial class CollectionExtensions
-#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
   {
 
 #pragma warning disable CS1573 // Parameter has no matching param tag in the XML comment (but other parameters do)
@@ -102,7 +100,7 @@ namespace Software9119.ReadCollection
     /// <summary>
     /// Collection in new List{T}.
     /// </summary>
-    public List<T> List() => new List<T>(Items);
+    public List<T> List() => new(Items);
 
     #endregion
 
@@ -111,6 +109,11 @@ namespace Software9119.ReadCollection
     /// </summary>
     public void PerEvery(Action<T> action)
     {
+      if (action is null)
+      {
+        throw new ArgumentNullException(nameof(action));
+      }
+
       for (var i = 0; i < Items.Count; ++i)
       {
         action(Items[i]);
