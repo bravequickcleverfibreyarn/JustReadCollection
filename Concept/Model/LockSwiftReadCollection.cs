@@ -35,7 +35,11 @@ namespace Concept.Model
 
     // TODO: Buffer.MemoryCopy.
     // TODO: to private protected.
+#pragma warning disable IDE0051 // Remove unused private members
+#pragma warning disable CA1822 // Mark members as static
     void CopyFromItems(T[] items, T[] newArr, int index, int count)
+#pragma warning restore CA1822 // Mark members as static
+#pragma warning restore IDE0051 // Remove unused private members
     {
       int typeSize;
       unsafe
